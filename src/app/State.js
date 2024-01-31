@@ -20,19 +20,20 @@ const State = () => {
         return () => clearInterval(intervalId);
     }, [timeLeft]); // Add timeLeft as a dependency
 
-    const [value,setValue] = useState('next-js')
-    const changeValue = () =>{
-        setValue('javascript')
+    const [value, setValue] = useState('next-js')
+    const changeValue = () => {
+        setValue((prevValue) => (prevValue === 'next-js' ? 'javascript' : 'next-js'));
     }
     return (
         <main>
-           
-           <p className='text-xl'> Countdown = {timeLeft.days}: {timeLeft.hours} : {timeLeft.minutes}:  {timeLeft.seconds}</p>
 
-          <div className='my-5'> 
-          <p>Hello {value}</p>
-            <button onClick={changeValue} className='text-white bg-black px-3 py-2'>Change Value</button>
-          </div>
+            <p className='text-xl'> Countdown = {timeLeft.days}: {timeLeft.hours} : {timeLeft.minutes}:  {timeLeft.seconds}</p>
+
+            <section className='my-5'>
+                <p className='text-2xl'>Hello {value}</p>
+                <button onClick={changeValue} className='text-white bg-black px-3 py-2'>Change Value</button>
+            </section>
+
         </main>
     );
 };
