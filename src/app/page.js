@@ -1,7 +1,7 @@
 'use client'
 
 import State from "./State";
-import Hero from "./components/hero";
+
 
 export default function Home() {
   const fun =() =>{
@@ -12,7 +12,7 @@ export default function Home() {
     <h1>Hello</h1>
     <button onClick={fun} className="bg-teal-600 text-white px-2 py-2 rounded-sm">Click Me</button>
     <State/>
-    <Hero/>
+    
    </main>
   );
 }
